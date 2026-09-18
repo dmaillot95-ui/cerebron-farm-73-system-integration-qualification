@@ -1,0 +1,21 @@
+name: CEREBRON F73 Farm Contract
+on:
+  push:
+    paths: ['farm.json','.github/workflows/farm-contract.yml']
+  workflow_dispatch:
+jobs:
+  validate-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Validate farm contract
+        shell: python
+        run: |
+          import json
+          p=json.load(open("farm.json"))
+          assert p["farm_id"]==73 and p["expected_farm_range"]==[1,73]
+          assert "system-integration" in p["capabilities"]
+          assert "ABLATION_BEFORE_ADDITION" in p["rules"]
+          print("F73_CONTRACT_VERIFIED")

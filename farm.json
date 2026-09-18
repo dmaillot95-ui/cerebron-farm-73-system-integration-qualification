@@ -1,0 +1,27 @@
+{
+  "farm_id": 73,
+  "name": "cerebron-farm-73-system-integration-qualification",
+  "domain": "system-integration-qualification",
+  "status": "SCAFFOLDED",
+  "protocol": "SPIRALIX-OMEGA",
+  "capabilities": [
+    "system-integration",
+    "cross-farm-interface-verification",
+    "qualification-gate",
+    "architecture-freeze"
+  ],
+  "evidence_ceiling": "E2-before-full-system-qualification",
+  "kernel": "dmaillot95-ui/cerebron-omega-ai",
+  "expected_farm_range": [
+    1,
+    73
+  ],
+  "rules": [
+    "REALITY>COHERENCE",
+    "EVIDENCE>CONFIDENCE",
+    "CLAIM<=EVIDENCE",
+    "VERIFY_BEFORE_COMMIT",
+    "ABLATION_BEFORE_ADDITION",
+    "TRANSFER_BEFORE_GENERALITY"
+  ]
+}
